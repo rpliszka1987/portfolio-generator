@@ -1,3 +1,16 @@
+// Generate the about section
+const generateAbout = aboutText => {
+    if (!aboutText) {
+        return '';
+    }
+
+    return `
+        <section class="my-3" id="about">
+            <h2 class="text-dark bg-primary p-2 display-inline-block">Abount Me</h2>
+            <p>${aboutText}</p>
+        </section>`
+}
+
 module.exports = templateData => {
     // console.log(templateData);
 
@@ -35,8 +48,7 @@ module.exports = templateData => {
             </header>
 
             <main class="container my-5">
-            
-            
+                ${generateAbout(about)}
             </main>
 
             <footer class="container text-center py-3">
